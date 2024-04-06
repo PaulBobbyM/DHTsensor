@@ -1,3 +1,5 @@
+//Measures the Temperature and Humidity with the help of a DHT11 sensor and sends it to Arduino 
+//From Arduino the data is transferred to the ESP32 
 #include<DHT.h>
 #define DHTPIN 2
 #define DHTTYPE DHT11
