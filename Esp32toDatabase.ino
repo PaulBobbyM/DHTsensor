@@ -1,3 +1,5 @@
+// This code sends the data from ESP32 to a XAMPP database
+
 #include <WiFi.h> 
 #include <HTTPClient.h> 
 
