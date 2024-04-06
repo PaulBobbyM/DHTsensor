@@ -6,13 +6,10 @@
 #define RXp2 16
 #define TXp2 17
 
-String URL = "http://172.20.10.13/dht_11/temp.php";
+String URL = "http://[ip address or localhost]/[location of php file in htdocs folder of xampp]";
 
-const char* ssid = "Yasir ansari"; 
-const char* password = "youo1234"; 
-
-int temperature = 50; 
-int humidity = 50;
+const char* ssid = "ssid"; 
+const char* password = "password"; 
 
 void setup() {
   Serial.begin(115200); 
@@ -27,13 +24,9 @@ void loop() {
 
   String readInput = Serial2.readString();
 
+  // readInput is a string in the form: "TT HH", where TT is the temperature and HH is humidity
   int temperature__ = (readInput[0]-'0')*10 + (readInput[1]-'0');
   int humidity__ = (readInput[3]-'0')*10 + (readInput[4]-'0');
-
-  // Serial.print(temperature__);
-  // Serial.print("a");
-  // Serial.print(humidity__);
-  // Serial.println();
 
   String postData = "temperature=" + String(temperature__) + "&humidity=" + String(humidity__); 
 
