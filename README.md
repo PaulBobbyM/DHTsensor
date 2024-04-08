@@ -20,8 +20,14 @@ To read from DHT11, Arduino UNO is used because the model of ESP32 used isn't co
 ArduinoToEsp32.ino contains the code that is uploaded to Arduino. It uses the 'DHT Sensor Library' to read data from DHT11 connected to pin 2 of Arduino. The data is written on to the serial port.
 
 ## Interfacing Arduino and ESP32
+The data that is collected by the Arduino is then sent to the ESP32. The communication protocol used between the Arduino and ESP32 is USART/UART.
+
+UART(Universal Asynchronous Receiver/Transmitter) is a commonly used serial communication protocol in embedded systems and computer peripherals. It facilitates asynchronous communication between devices by transmitting data serially, one bit at a time, over a single wire or pair of wires.
 
 ## Connecting ESP32 to WiFi
+The ESP32 connects to the WiFi using the WiFi module present on the ESP32 itself.
+
+The ESP32's WiFi module connects to wireless networks, communicates with devices, and transfers data. It initializes, scans for networks, and connects securely using credentials. Once connected, it sends and receives data packets over the network. It can also function as an access point, creating its own network. Security features like encryption are supported. Power-saving mechanisms optimize energy consumption for battery-operated devices. Overall, it enables seamless wireless communication in IoT and embedded applications.
 
 ## Sending data to XAMPP database
 To send data to XAMPP database, we use a php file. The XAMPP database is made visible as localhost on the WiFi to which the computer is connected. Since it is localhost, the ESP32 and the computer must connect to the same WiFi.
